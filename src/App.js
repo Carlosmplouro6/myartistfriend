@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
+import BaseCanvas from "./components/BaseCanvas";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <BaseCanvas />
         <p>Amo-te Anna, lets be happy</p>
         <a
           className="App-link"

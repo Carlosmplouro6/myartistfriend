@@ -1,11 +1,11 @@
 import "./App.css";
-import BaseCanvas from "./components/BaseCanvas";
+import RandomSquaresCanvas from "./components/RandomSquaresCanvas";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BaseCanvas />
+        <RandomSquaresCanvas />
         <p>Amo-te Anna, lets be happy</p>
       </header>
     </div>

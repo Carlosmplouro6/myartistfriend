@@ -18,7 +18,7 @@ export function randomRGBAColor(r = 255, g = 255, b = 255, a) {
   )})`;
 }
 
-export function createRandomColoredSquares(
+export function createRandomColored3Pos(
   num,
   size,
   r = 255,

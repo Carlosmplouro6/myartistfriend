@@ -3,7 +3,7 @@ import { ReactP5Wrapper } from "@p5-wrapper/react";
 import { createRandomColored3Pos } from "../utils/helper";
 
 function sketch(p5, amount, size, outline) {
-  const squares = createRandomColored3Pos(amount, size);
+  const circles = createRandomColored3Pos(amount, size);
   p5.setup = () => {
     p5.createCanvas(800, 600);
   };
@@ -11,19 +11,19 @@ function sketch(p5, amount, size, outline) {
     p5.background(360);
     !outline && p5.noStroke();
     p5.rectMode("center");
-    for (let index = 0; index < squares.length; index++) {
-      createSquare(p5, squares[index].fill, squares[index].coords);
+    for (let index = 0; index < circles.length; index++) {
+      createCircle(p5, circles[index].fill, circles[index].coords);
     }
   };
 }
 
-function createSquare(p5, fill, coords) {
+function createCircle(p5, fill, coords) {
   p5.fill(fill);
-  p5.square(coords[0], coords[1], coords[2]);
+  p5.circle(coords[0], coords[1], coords[2]);
 }
 
-function RandomSquaresCanvas() {
-  const [amount, setAmount] = useState(10000);
+function RandomCircleCanvas() {
+  const [amount, setAmount] = useState(5000);
   const [size, setSize] = useState(50);
   const [outline, setOutline] = useState(false);
 
@@ -67,4 +67,4 @@ function RandomSquaresCanvas() {
   );
 }
 
-export default RandomSquaresCanvas;
+export default RandomCircleCanvas;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ReactP5Wrapper } from "@p5-wrapper/react";
 import { createRandomColored3Pos } from "../utils/helper";
+import { Input, Checkbox } from "@heroui/react";
 
 function sketch(p5, amount, size, outline) {
   const circles = createRandomColored3Pos(amount, size);
@@ -43,23 +44,27 @@ function RandomCircleCanvas() {
       >
         <div
           style={{ marginRight: 50, display: "flex", flexDirection: "column" }}
+          className=" gap-4"
         >
-          <label>
-            amount:
-            <input value={amount} onChange={(e) => setAmount(e.target.value)} />
-          </label>
-          <label>
-            size:
-            <input value={size} onChange={(e) => setSize(e.target.value)} />
-          </label>
-          <label>
-            outline:
-            <input
-              type="checkbox"
-              value={outline}
-              onChange={(e) => setOutline(!outline)}
-            />
-          </label>
+          <Input
+            label="Amount"
+            placeholder="Enter the number of squares"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+
+          <Input
+            label="Size"
+            placeholder="Enter the size of squares"
+            type="number"
+            value={size}
+            onChange={(e) => setSize(e.target.value)}
+          />
+
+          <Checkbox value={outline} onChange={(e) => setOutline(!outline)}>
+            Outline
+          </Checkbox>
         </div>
         <ReactP5Wrapper sketch={setSketch} />
       </div>

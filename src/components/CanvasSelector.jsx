@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import RandomSquaresCanvas from "./RandomSquaresCanvas";
 import RandomCircleCanvas from "./RandomCircleCanvas";
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 const canvas = [<RandomSquaresCanvas />, <RandomCircleCanvas />];
 
@@ -26,11 +27,17 @@ export default function CanvasSelector() {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
+        padding: 20,
       }}
     >
-      <div onClick={goBack}>L</div>
+      <div onClick={goBack}>
+        <IconArrowLeft size={48} />
+      </div>
       <div>{canvas[selectedCanvas]}</div>
-      <div onClick={goForward}>R</div>
+      <div onClick={goForward}>
+        <IconArrowRight size={48} />
+      </div>
     </div>
   );
 }
